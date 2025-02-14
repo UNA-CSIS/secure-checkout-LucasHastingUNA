@@ -16,7 +16,7 @@
     */
 
     //redirect if the user manually types in functions.php
-    if($_SERVER['SCRIPT_NAME'] == "/homework-2/functions.php"){
+    if($_SERVER['SCRIPT_NAME'] == "/credit-card/functions.php"){
         header("Location: index.php");
     }
 
