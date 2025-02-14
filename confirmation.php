@@ -64,5 +64,6 @@ if_redirect();
             }
         }
         ?>
+        <p><a href = "index.php">Buy something else</a></p> 
     </body>
 </html>

@@ -10,6 +10,12 @@ if_redirect();
 
 //processing
 $total = $_SESSION['total'];
+
+//get variables needed from POST 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user = test_input($_POST['user']);
+    $pass = test_input($_POST['pass']);
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -22,10 +28,10 @@ $total = $_SESSION['total'];
 
     <body>
         <h3>Checkout</h3>
-        <p> The amount to charge: $<?= $total ?> </p>
         <?php
-        if (authenticated($_POST["user"], $_POST["pass"])) {
+        if (authenticated($user, $pass)) {
             ?>
+            <p> The amount to charge: $<?= $total ?> </p>
             <form method="post" action="confirmation.php">
                 Name on Card: <input type="text" name="NOC" required> <br>
                 Card Number: <input type="password" name="CN" min="0" required> <br>
@@ -35,7 +41,8 @@ $total = $_SESSION['total'];
                 <?php
             } else {
                 ?>
-                <p>Not Authenticated</p>
+                <p>Invalid authentication</p> 
+                <p><a href = "authentication.php">Go back</a></p>
                 <?php
             }
             ?>
