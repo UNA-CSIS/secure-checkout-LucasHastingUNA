@@ -12,6 +12,8 @@
                 https://stackoverflow.com/questions/8104998/how-to-call-function-of-one-php-file-from-another-php-file-and-pass-parameters-t
                 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password
                 https://www.w3schools.com/php/php_superglobals_server.asp
+                https://www.w3schools.com/php/func_string_explode.asp
+                https://www.w3schools.com/php/func_array_end.asp
                 Class Code/Notes
     */
 
