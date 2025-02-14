@@ -16,7 +16,8 @@
     */
 
     //redirect if the user manually types in functions.php
-    if($_SERVER['SCRIPT_NAME'] == "/credit-card/functions.php"){
+    $split_url = explode("/",$_SERVER['SCRIPT_NAME']);
+    if(end($split_url) == "functions.php"){
         header("Location: index.php");
     }
 
