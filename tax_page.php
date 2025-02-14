@@ -1,21 +1,21 @@
 <?php
-    //See functions.php for references, contains functions
-    require "functions.php";
+//See functions.php for references, contains functions
+require "functions.php";
 
-    //start the session
-    session_start();
+//start the session
+session_start();
 
-    //change header if needed
-    if_redirect();
+//change header if needed
+if_redirect();
 
-    //processing
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $subtotal = $_SESSION['subtotal'];
-        $tax_rate = 0.095;
-        $tax = round($subtotal * $tax_rate, 2);
-        $total = round($tax + $subtotal, 2);
-        $_SESSION['total'] = $total;
-    }
+//processing
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $subtotal = $_SESSION['subtotal'];
+    $tax_rate = 0.095;
+    $tax = round($subtotal * $tax_rate, 2);
+    $total = round($tax + $subtotal, 2);
+    $_SESSION['total'] = $total;
+}
 ?>
 
 <!DOCTYPE HTML>
